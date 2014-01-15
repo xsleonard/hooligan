@@ -61,12 +61,12 @@ h2 {
 
 pre, code {
 	color:#ccc;
-    font-family: "Inconsolata", normal;
-    font-size: 14px;
 }
 
 pre > code {
 	/* Reset box-shadow for pygments */
+    font-family: "Inconsolata", normal;
+    font-size: 14px;
 	background:none;
 	box-shadow:none;
 	-moz-box-shadow: none;
