@@ -58,13 +58,23 @@
     <section>
     <h4>Recent posts</h4>
     <ul>
+    {% assign skipped = false %}
     {% for post in site.posts offset: 0 limit: site.recent_posts %}
-      {% if post.id != page.id %}
-      <li><h3>
+      {% if post.id == page.id %}
+        {% assign skipped = true %}
+      {% else %}
+        <li><h3>
           <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
         </h3></li>
       {% endif %}
     {% endfor %}
+    {% if skipped %}
+    {% for post in site.posts offset: site.recent_posts limit: 1 %}
+      <li><h3>
+        <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+      </h3></li>
+    {% endfor %}
+    {% endif %}
     </ul>
     </section>
   </div>
