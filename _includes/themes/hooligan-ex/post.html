@@ -29,10 +29,6 @@
 
   <div class="span4">
     <section>
-    <iframe src="http://githubbadge.appspot.com/{{ site.author.github }}?a=0"
-     style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
-    </section>
-    <section>
       <h4>Published</h4>
       <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
     </section>
@@ -53,11 +49,23 @@
         </ul>
       </section>
     {% endunless %}
+    <hr>
+    <section class="github-badge">
+    <iframe src="http://githubbadge.appspot.com/{{ site.author.github }}?a=0"
+     style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
+    </section>
+    <hr>
     <section>
-    <h2>Recent posts</h2>
-    {% for post in site.posts offset: 0 limit: site.recent_posts  %}
-        <h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
+    <h4>Recent posts</h4>
+    <ul>
+    {% for post in site.posts offset: 0 limit: site.recent_posts %}
+      {% if post.id != page.id %}
+      <li><h3>
+          <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+        </h3></li>
+      {% endif %}
     {% endfor %}
+    </ul>
     </section>
   </div>
 </div>
