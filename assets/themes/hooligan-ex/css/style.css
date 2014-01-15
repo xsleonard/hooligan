@@ -68,12 +68,12 @@ h2 {
 /* line 62, ../_sass/_base.scss */
 pre, code {
   color: #ccc;
+  font-family: "Inconsolata", normal;
 }
 
-/* line 66, ../_sass/_base.scss */
+/* line 67, ../_sass/_base.scss */
 pre > code {
   /* Reset box-shadow for pygments */
-  font-family: "Inconsolata", normal;
   font-size: 14px;
   background: none;
   box-shadow: none;
