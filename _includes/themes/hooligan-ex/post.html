@@ -1,14 +1,13 @@
-<div class="page-header">
-  <h1>
-    {{ page.title }} 
-    {% if page.tagline %}
-      <small>{{ page.tagline }}</small>
-    {% endif %}
-  </h1>
-</div>
-
 <div class="row">
-  <div class="span8">
+  <div class="page-header offset2">
+    <h1>
+      {{ page.title }}
+      {% if page.tagline %}
+        <small>{{ page.tagline }}</small>
+      {% endif %}
+    </h1>
+  </div>
+  <div class="span6 offset1">
     {{ content }}
     <hr>
     <div class="pagination btn-group">
@@ -27,7 +26,7 @@
     <hr>
     {% include JB/comments %}
   </div>
-  
+
   <div class="span4">
     <section>
       <h4>Published</h4>
@@ -40,7 +39,7 @@
           {{ page.category }}
         </span>
       </section>
-    {% endif %}     
+    {% endif %}
     {% unless page.tags == empty %}
       <section>
         <h4>Tags</h4>
@@ -49,6 +48,6 @@
           {% include JB/tags_list %}
         </ul>
       </section>
-    {% endunless %}         
+    {% endunless %}
   </div>
 </div>
